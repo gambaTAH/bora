@@ -50,7 +50,6 @@ transition:transform 6s linear;
 }
 
 </style>
-
 </head>
 
 <body>
@@ -87,9 +86,25 @@ foto.style.transform="translate(-50%,-50%) scale(1)"
 
 document.getElementById("musica").play()
 
-// vibração do celular
+// vibração por 5 minutos
 if(navigator.vibrate){
-navigator.vibrate([200,100,200,100,500])
+
+let tempoTotal = 300000 // 5 minutos
+let intervalo = 1000
+let tempo = 0
+
+let vibrar = setInterval(function(){
+
+navigator.vibrate([800,200,800])
+
+tempo += intervalo
+
+if(tempo >= tempoTotal){
+clearInterval(vibrar)
+}
+
+}, intervalo)
+
 }
 
 abrirTelaCheia()
@@ -123,5 +138,4 @@ doc.requestFullscreen()
 </script>
 
 </body>
-
 </html>
