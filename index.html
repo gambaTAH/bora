@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
 <meta charset="UTF-8">
 <title>Bora sair?</title>
@@ -49,6 +50,7 @@ transition:transform 6s linear;
 }
 
 </style>
+
 </head>
 
 <body>
@@ -56,8 +58,11 @@ transition:transform 6s linear;
 <h1>Bora sair?</h1>
 
 <div id="botoes">
+
 <button onclick="aceitou()">Sim</button>
+
 <button onclick="criarSim()">Não</button>
+
 </div>
 
 <img id="foto" src="OIP.webp">
@@ -81,6 +86,11 @@ foto.style.transform="translate(-50%,-50%) scale(1)"
 },50)
 
 document.getElementById("musica").play()
+
+// vibração do celular
+if(navigator.vibrate){
+navigator.vibrate([200,100,200,100,500])
+}
 
 abrirTelaCheia()
 
@@ -110,23 +120,8 @@ doc.requestFullscreen()
 
 }
 
-navigator.vibrate(500)
-function aceitou(){
-
-document.body.style.background="green"
-
-document.getElementById("botoes").style.display="none"
-
-document.getElementById("foto").style.display="block"
-
-document.getElementById("musica").play()
-
-navigator.vibrate([200,100,200,100,400])
-
-}
-
 </script>
 
-
 </body>
+
 </html>
